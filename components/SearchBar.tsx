@@ -24,7 +24,7 @@ const SearchBar = () => {
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (manufacturer === "" && model === "") {
-      return alert("Please fill in the searchbar");
+      return;
     }
 
     updateSearchParams(manufacturer.toLowerCase(), model.toLowerCase());
@@ -76,6 +76,7 @@ const SearchBar = () => {
           onChange={(e) => setModel(e.target.value)}
           placeholder="Tiguan..."
           className="searchbar__input"
+          autoComplete="off"
         />
         <SearchButton otherClasses="sm:hidden" />
       </div>
